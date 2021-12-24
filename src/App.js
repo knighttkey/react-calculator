@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {
+  useCallback,
+  useState,
+  useEffect,
+  Fragment,
+  useContext,
+} from "react";
+import "./App.scss";
+import Calculator from "./components/Calculator/Calculator";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-function App() {
+import { Provider } from "./components/context";
+const App = () => {
+  const contextValue = {
+
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Provider value={contextValue}>
+        <Calculator/>
+    </Provider>
     </div>
   );
-}
+};
 
 export default App;
